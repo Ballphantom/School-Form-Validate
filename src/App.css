@@ -1,12 +1,35 @@
 @import url(https://cdn.katsuragi.cyou/fonts/TH/LINEseed-Regular); 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-*{
-  font-family: 'LINEseed-Regular', sans-serif;
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 80%;
+  margin: auto 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  opacity: .1;
 }
 
 body{
   background-image: url('./contents/school.jpg');
   background-size: cover;
+  height: 100vh;
+  font-family: 'LINEseed-Regular', sans-serif;
 }
 
 .form-container {
@@ -16,21 +39,32 @@ body{
   height: 100vh;
   background-color: #f5f5f5;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(1px);
 }
 
-form {
+.form-section {
+  color: #3a3a3a;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: #fff ;
+  border-radius: 0.5rem;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 350px;
+  width: 450px;
+  height: 80%;
+  overflow-y: auto;
 }
 
 .form-header{
+  font-family: 'Bebas Neue', cursive;
+  color: #000;
+  letter-spacing: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: large;
+}
+
+hr{
   font-weight: bold;
 }
 
@@ -43,30 +77,63 @@ form {
 
 label {
   margin-bottom: 5px;
+  font-weight: 200;
+  text-align: left
 }
 
 input {
+  font-family: 'LINEseed-Regular', sans-serif;
   border: none;
   border-bottom: 1px solid #ddd;
-  border-radius: 3px;
   padding: 2px;
   width: 100%;
+  margin: auto;
   outline: none;
   background: transparent;
+  color: #000000;
+}
+
+select{
+  font-family: 'LINEseed-Regular', sans-serif;
+  margin: auto;
+  border: none;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  color: #000;
+}
+
+input:hover{
+  border-top: 1px solid #e65858;
+  border-bottom: 1px solid #e65858;
+}
+
+::placeholder{
+  color: #99A3A4;
+}
+
+.submit-button{
+  text-align: center;
 }
 
 button {
+  margin-top: 1rem;
   background-color: #333;
   border: none;
   border-radius: 3px;
   color: #fff;
+  text-shadow: 0 0 5px;
   cursor: pointer;
   font-size: 16px;
   padding: 10px 20px;
-  transition: background-color 0.3s ease-in-out;
-  width: 100%;
+  width: 50%;
+  transition: background-color 0.5s ease-in-out;
 }
 
 button:hover {
-  background-color: #8bc1d6;
+  width: 50%;
+  background-color: #6bc1fa;
+  color: #333333;
+  text-shadow: 0 0 5px;
+  width: 50%;
 }
