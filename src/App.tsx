@@ -29,7 +29,7 @@ const App = () => {
       <Form onSubmit={onSubmit} validate={validate}>
         {({ handleSubmit, submitting }) => (
           <form onSubmit={handleSubmit}>
-            <div className="form-header"><h2>SCHOOL REGISTER FORM</h2></div>
+            <div className="form-header"><h2>- SCHOOL REGISTER FORM -</h2></div>
             <div className="form-field">
               <label>First Name</label>
               <Field name="firstName" component="input" type="text" />
@@ -48,7 +48,11 @@ const App = () => {
             </div>
             <div className="form-field">
               <label>Gender</label>
-              <Field name="gender" component="input" type="text" />
+              <Field name="gender" component="select" type="text">
+                <option value="none"></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </Field>
             </div>
             <div className="form-field">
               <label>GPA</label>
@@ -58,7 +62,7 @@ const App = () => {
               <label>Birthday</label>
               <Field name="birthday" component="input" type="date" />
             </div>
-            <div className="form-field">
+            {/* <div className="form-field">
               <label>Address</label>
               <Field name="address" component="input" type="text" />
             </div>
@@ -69,7 +73,7 @@ const App = () => {
             <div className="form-field">
               <label>Class</label>
               <Field name="class" component="input" type="text" />
-            </div>
+            </div> */}
             <button type="submit" disabled={submitting}>
               Submit
             </button>

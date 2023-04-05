@@ -4,12 +4,19 @@
   font-family: 'LINEseed-Regular', sans-serif;
 }
 
+body{
+  background-image: url('./contents/school.jpg');
+  background-size: cover;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #f5f5f5;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2.5px);
 }
 
 form {
@@ -24,7 +31,7 @@ form {
 }
 
 .form-header{
-  font-size: bold;
+  font-weight: bold;
 }
 
 .form-field {
@@ -36,14 +43,16 @@ form {
 
 label {
   margin-bottom: 5px;
-  font-weight: bold;
 }
 
 input {
-  border: 1px solid #ddd;
+  border: none;
+  border-bottom: 1px solid #ddd;
   border-radius: 3px;
   padding: 2px;
   width: 100%;
+  outline: none;
+  background: transparent;
 }
 
 button {
