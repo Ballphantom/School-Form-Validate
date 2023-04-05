@@ -8,7 +8,7 @@ export const SchoolRegisterForm = yup.object().shape({
   email: yup.string()
     .email('Invalid Email')
     .required('Emaiil is required'),
-  telephoneNumber: yup.number()
+  telephoneNumber: yup.string()
     .min(10, 'Phone number need 10 numbers')
     .required('Phone number required'),
   gender: yup.string()
@@ -17,12 +17,14 @@ export const SchoolRegisterForm = yup.object().shape({
     .required('GPA required'),
   birthday: yup.date()
     .required('When were you born?'),
-  // address: yup.string()
-  //   .required(),
-  // citizenID: yup.number()
-  //   .required()
-  //   .min(13, 'ID must have 13 numbers')
-  //   .max(13, 'ID must have 13 numbers'),
-  // class: yup.string()
-  //   .required('What class are you interested in?')
+  age: yup.number()
+    .required('How old are you?'),
+  address: yup.string()
+    .required(),
+  citizenID: yup.string()
+    .required()
+    .min(13, 'ID must have 13 numbers')
+    .max(13, 'ID must have 13 numbers'),
+  class: yup.string()
+    .required('What class are you interested in?')
 });

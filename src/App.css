@@ -56,7 +56,7 @@ input {
 }
 
 button {
-  background-color: #5e5e5e;
+  background-color: #333;
   border: none;
   border-radius: 3px;
   color: #fff;
@@ -68,5 +68,5 @@ button {
 }
 
 button:hover {
-  background-color: #333;
+  background-color: #8bc1d6;
 }

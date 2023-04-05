@@ -1,5 +1,5 @@
 import { Form, Field } from "react-final-form";
-import { SchoolRegisterForm } from "./components/SchoolRegisterForm";
+import { SchoolRegisterForm } from "./ValidationSchema/SchoolRegisterForm";
 import { ValidationErrors } from "final-form";
 import { ValidationError } from "yup";
 import "./App.css";
@@ -15,12 +15,15 @@ const validate = async (values: any): Promise<ValidationErrors> => {
     return err.inner.reduce(
       (errors: ValidationErrors, innerError: ValidationError) => {
         if (innerError.path !== undefined) {
+          console.log(err);
           return { ...errors, [innerError.path]: innerError.message };
         }
+        return errors;
       },
       {}
     );
   }
+  return {};
 };
 
 const App = () => {
@@ -29,7 +32,7 @@ const App = () => {
       <Form onSubmit={onSubmit} validate={validate}>
         {({ handleSubmit, submitting }) => (
           <form onSubmit={handleSubmit}>
-            <div className="form-header"><h2>- SCHOOL REGISTER FORM -</h2></div>
+            <div className="form-header"><h2>- BAN NONG KOK SCHOOL -</h2></div>
             <div className="form-field">
               <label>First Name</label>
               <Field name="firstName" component="input" type="text" />
@@ -43,8 +46,8 @@ const App = () => {
               <Field name="email" component="input" type="email" />
             </div>
             <div className="form-field">
-              <label>Telephone Number</label>
-              <Field name="telephoneNumber" component="input" type="number" />
+              <label>Telephone number</label>
+              <Field name="telephoneNumber" component="input" type="text" />
             </div>
             <div className="form-field">
               <label>Gender</label>
@@ -62,7 +65,13 @@ const App = () => {
               <label>Birthday</label>
               <Field name="birthday" component="input" type="date" />
             </div>
-            {/* <div className="form-field">
+            
+            <div className="form-field">
+              <label>Age</label>
+              <Field name="age" component="input" type="number" />
+            </div>
+
+            <div className="form-field">
               <label>Address</label>
               <Field name="address" component="input" type="text" />
             </div>
@@ -73,7 +82,7 @@ const App = () => {
             <div className="form-field">
               <label>Class</label>
               <Field name="class" component="input" type="text" />
-            </div> */}
+            </div>
             <button type="submit" disabled={submitting}>
               Submit
             </button>
