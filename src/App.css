@@ -8,19 +8,16 @@
   margin: auto 0;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: lightgray;
   border-top-right-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   opacity: .1;
 }
