@@ -1,5 +1,10 @@
 import * as yup from "yup";
 
+const validatePhone = (value: any) =>{
+  const regex = /^\d{10}&/;
+  return regex.test(value)
+}
+
 export const SchoolRegisterForm = yup.object().shape({
   firstName: yup.string()
     .required('Name required'),

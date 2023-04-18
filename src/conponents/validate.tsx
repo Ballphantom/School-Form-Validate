@@ -2,8 +2,25 @@ import { ValidationErrors } from "final-form";
 import { ValidationError } from "yup";
 import { SchoolRegisterForm } from "./SchoolRegisterForm";
 
-export const validate = async (values: any): Promise<ValidationErrors> => {
-  console.log('เอิ้ว');
+export interface FormInterface {
+  firstName: string;
+  lastName: string;
+  email: string;
+  telephoneNumber: string;
+  gender: string;
+  gpa: number;
+  birthday: Date;
+  age: number;
+  address: string;
+  citizenID: string;
+  class: string;
+}
+
+export const onSubmit = (values: FormInterface) => {
+  console.log(values);
+};
+
+export const validate = async (values: FormInterface): Promise<ValidationErrors> => {
   try {
     await SchoolRegisterForm.validate(values, { abortEarly: false });
   } catch (err: any) {

@@ -1,10 +1,6 @@
 import { Form, Field } from "react-final-form";
 import "./App.css";
-import { validate } from "./conponents/validate";
-
-const onSubmit = (values: any) => {
-  console.log(values);
-};
+import { validate, onSubmit } from "./conponents/validate";
 
 const App = () => {
   return (
@@ -52,7 +48,7 @@ const App = () => {
                 <Field
                   name="telephoneNumber"
                   component="input"
-                  type="text"
+                  type="number"
                   placeholder="+66 0945781234"
                 />
               </div>
